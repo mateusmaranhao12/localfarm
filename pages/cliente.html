@@ -77,30 +77,13 @@
         <section>
             <div class="px-4 md:pl-[157px] pb-[100px] md:pb-[50px]">
                 <div class="pt-20">
-                    <p class="text-[32px] font-poppins font-semibold leading-tight-20 text-text-green">Movimentação de
-                        produto</p>
-                </div>
-
-                <!-- Botões com layout de grid -->
-                <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
-                    <button
-                        class="w-40 py-4 bg-text-green text-white text-lg font-medium rounded-lg shadow-md hover:bg-green-700 transition-all">
-                        Adicionar
-                    </button>
-                    <button
-                        class="w-40 py-4 bg-text-green text-white text-lg font-medium rounded-lg shadow-md hover:bg-green-700 transition-all">
-                        Editar
-                    </button>
-                    <button
-                        class="w-40 py-4 bg-text-green text-white text-lg font-medium rounded-lg shadow-md hover:bg-green-700 transition-all">
-                        Desabilitar
-                    </button>
+                    <p class="text-[32px] font-poppins font-semibold leading-tight-20 text-text-green">Cliente / Fornecedor</p>
                 </div>
             </div>
         </section>
 
         <!--Tabela-->
-        <section class="container mx-auto px-4 sm:px-32 py-2 mb-5">
+        <section class="container mx-auto px-4 sm:px-48 py-2 mb-5">
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                 <table class="w-full text-sm text-left rtl:text-right text-gray-500 table-auto">
                     <thead class="text-xs text-white uppercase bg-green-800">
@@ -109,81 +92,57 @@
                                 COD
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Data
+                                Nome
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                CPF/CNPJ
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Tipo
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Produto
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Cliente / Fornecedor
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Finalidade
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="bg-orange-50 border-b border-white">
                             <th scope="row" class="px-6 py-4 font-medium text-black whitespace-nowrap">
-                                1
+                                01
                             </th>
                             <td class="px-6 py-4 text-black">
-                                01/01/01
+                                Fernanda
                             </td>
                             <td class="px-6 py-4 text-black">
-                                Entrada
+                                00.000.000/0001-00
                             </td>
                             <td class="px-6 py-4 text-black">
-                                Alface
-                            </td>
-                            <td class="px-6 py-4 text-black">
-                                Lorem ipsum
-                            </td>
-                            <td class="px-6 py-4 text-black">
-                                Compra
+                                Cliente
                             </td>
                         </tr>
                         <tr class="bg-orange-50 border-b border-white">
                             <th scope="row" class="px-6 py-4 font-medium text-black whitespace-nowrap">
-                                2
+                                02
                             </th>
                             <td class="px-6 py-4 text-black">
-                                02/01/01
+                                Rodolfo
                             </td>
                             <td class="px-6 py-4 text-black">
-                                Saída
+                                00.000.000/0001-00
                             </td>
                             <td class="px-6 py-4 text-black">
-                                Rucula
-                            </td>
-                            <td class="px-6 py-4 text-black">
-                                Lorem ipsum
-                            </td>
-                            <td class="px-6 py-4 text-black">
-                                Produção
+                                Cliente
                             </td>
                         </tr>
                         <tr class="bg-orange-50 border-b border-white">
                             <th scope="row" class="px-6 py-4 font-medium text-black whitespace-nowrap">
-                                3
+                                03
                             </th>
                             <td class="px-6 py-4 text-black">
-                                05/01/01
+                                Marcos
                             </td>
                             <td class="px-6 py-4 text-black">
-                                Entrada
+                                00.000.000/0001-00
                             </td>
                             <td class="px-6 py-4 text-black">
-                                Semente de alface
-                            </td>
-                            <td class="px-6 py-4 text-black">
-                                Lorem ipsum
-                            </td>
-                            <td class="px-6 py-4 text-black">
-                                Venda
+                                Fornecedor
                             </td>
                         </tr>
                     </tbody>
@@ -217,6 +176,18 @@
                     <span class="text-sm text-gray-700">Go to</span>
                     <input type="number" class="px-2 py-1 border rounded-lg w-16" placeholder="1">
                 </div>
+            </div>
+        </section>
+
+        <section class="container mx-auto px-4">
+            <div class="flex justify-start mt-14 mb-14">
+                <button class="px-6 py-2 drop-shadow-lg bg-green-900 text-white text-lg rounded-lg hover:bg-green-700 transition duration-200">
+                    Confirmar
+                </button>
+                <button
+                    class="px-6 py-2 drop-shadow-lg bg-green-900 text-white text-lg rounded-lg hover:bg-green-700 transition duration-200 ml-2">
+                    Cancelar
+                </button>
             </div>
         </section>
 
