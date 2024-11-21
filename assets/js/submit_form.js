@@ -20,6 +20,13 @@ document.addEventListener('DOMContentLoaded', function () {
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
 
+        //Email e senha ficticios para teste
+        if (username === 'teste@gmail.com' && password === '123') {
+            // Redirecionar imediatamente
+            window.location.href = 'pages/menu-inicial.html';
+            return;
+        }
+
         try {
             // Fazer requisição ao endpoint de login no ambiente de produção
             const response = await fetch('https://produto-gaa2a9gfbvenbaaf.brazilsouth-01.azurewebsites.net/api/users/login', {
@@ -39,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Redirecionar para a página menu-inicial.html
                 window.location.href = 'pages/menu-inicial.html';
+
             } else {
                 // Exibir mensagem de erro e voltar ao estado normal
                 const errorText = await response.text();

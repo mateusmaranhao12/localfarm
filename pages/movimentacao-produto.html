@@ -1,0 +1,212 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimentação do Produto</title>
+    <meta name="description" content="Página de login para acesso ao sistema Local Farm">
+    <meta name="keywords" content="login, acesso, Local Farm">
+    <meta name="author" content="Seu Nome">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../dist/global.css">
+</head>
+
+<body class="bg-orange-100 custom-pink-87 overflow-x-hidden">
+
+    <nav id="navbar">
+        <div class="flex items-center justify-between bg-custom-green-93 py-6 px-4">
+            <div class="flex items-center cursor-pointer">
+                <img src="../img/LOCAL FARM.png" alt="Local Farm Logo" class="w-[120px] h-auto">
+            </div>
+
+            <div class="inline-flex items-center gap-x-4">
+                <div class="hidden md:block">
+                    <div class="inline-flex gap-x-6">
+                        <div>
+                            <img src="../img/picture_user_login.png" class="w-[38px] h-[38px] rounded-full"
+                                alt="Imagem Usuário">
+                        </div>
+                        <div>
+                            <p class="text-[24px] font-poppins font-medium leading-tight text-white">Olá, Fulana!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-6 flex flex-col justify-center items-center gap-y-2 cursor-pointer"
+                    onclick="showLogoutPopup()">
+                    <img src="../img/logout_icon.svg" class="w-[38px] h-[38px]" alt="Icone Logout">
+                    <div class="hidden md:block">
+                        <p class="text-base font-poppins font-bold leading-tight-20 text-white">LOGOUT</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pop-up de confirmação -->
+        <div id="logoutPopup"
+            class="fixed inset-0 bg-custom-green-95 bg-opacity-50 flex flex-col items-center justify-center hidden">
+            <div class="px-10 m-4 md:m-0 bg-custom-green-95 rounded-lg shadow-lg text-center">
+                <div class="mt-10 md:mt-[83px] pb-6 flex justify-center items-center">
+                    <img src="../img/logout_warning.png" class="w-[120px] h-fit" alt="Logout Aviso">
+                </div>
+                <h2 class="text-xl font-poppins font-medium text-custom-brown mb-4">Tem certeza?</h2>
+                <p class="text-[24px] font-poppins font-bold text-custom-orange">Deseja mesmo sair do sistema?</p>
+                <div class="mb-10 md:mb-[107px] pt-10 flex justify-around mt-4">
+                    <button onclick="confirmLogout()"
+                        class="bg-red-500 text-white py-2 px-10 rounded-lg hover:bg-red-600 transition duration-200">Sim</button>
+                    <button onclick="closeLogoutPopup()"
+                        class="bg-gray-300 text-black py-2 px-10 rounded-lg hover:bg-gray-400 transition duration-200">Não</button>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <main>
+        <section>
+            <div class="pt-10 pl-6 md:pt-20 md:pl-[77px]">
+                <div>
+                    <p class="seta text-[27px] font-poppins font-medium leading-tight-20 text-text-green"
+                        onclick="goBack()"><i class="fa-solid fa-arrow-left"></i></p>
+                </div>
+                <div class="mt-6 w-[173px] border-t border-text-green"></div>
+            </div>
+        </section>
+
+        <section>
+            <div class="px-4 md:pl-[157px] pb-[100px] md:pb-[150px]">
+                <div class="pt-20">
+                    <p class="text-[32px] font-poppins font-semibold leading-tight-20 text-text-green">Movimentação de
+                        produto</p>
+                </div>
+
+                <!-- Botões com layout de grid -->
+                <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
+                    <button
+                        class="w-40 py-4 bg-text-green text-white text-lg font-medium rounded-lg shadow-md hover:bg-green-700 transition-all">
+                        Adicionar
+                    </button>
+                    <button
+                        class="w-40 py-4 bg-text-green text-white text-lg font-medium rounded-lg shadow-md hover:bg-green-700 transition-all">
+                        Editar
+                    </button>
+                    <button
+                        class="w-40 py-4 bg-text-green text-white text-lg font-medium rounded-lg shadow-md hover:bg-green-700 transition-all">
+                        Desabilitar
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!--Tabela-->
+        <section class="container mx-auto px-4 sm:px-32 py-2 mb-5">
+            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 table-auto">
+                    <thead class="text-xs text-white uppercase bg-green-800">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">
+                                COD
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Data
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Tipo
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Produto
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Cliente / Fornecedor
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Finalidade
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-orange-50 border-b border-white">
+                            <th scope="row"
+                                class="px-6 py-4 font-medium text-black whitespace-nowrap">
+                                1
+                            </th>
+                            <td class="px-6 py-4 text-black">
+                                01/01/01 
+                            </td>
+                            <td class="px-6 py-4 text-black">
+                                Entrada
+                            </td>
+                            <td class="px-6 py-4 text-black">
+                                Alface
+                            </td>
+                            <td class="px-6 py-4 text-black">
+                                Lorem ipsum
+                            </td>
+                            <td class="px-6 py-4 text-black">
+                                Compra
+                            </td>
+                        </tr>
+                        <tr class="bg-orange-50 border-b border-white">
+                            <th scope="row"
+                                class="px-6 py-4 font-medium text-black whitespace-nowrap">
+                                2
+                            </th>
+                            <td class="px-6 py-4 text-black">
+                                02/01/01 
+                            </td>
+                            <td class="px-6 py-4 text-black">
+                                Saída
+                            </td>
+                            <td class="px-6 py-4 text-black">
+                                Rucula
+                            </td>
+                            <td class="px-6 py-4 text-black">
+                                Lorem ipsum
+                            </td>
+                            <td class="px-6 py-4 text-black">
+                                Produção
+                            </td>
+                        </tr>
+                        <tr class="bg-orange-50 border-b border-white">
+                            <th scope="row"
+                                class="px-6 py-4 font-medium text-black whitespace-nowrap">
+                                3
+                            </th>
+                            <td class="px-6 py-4 text-black">
+                                05/01/01 
+                            </td>
+                            <td class="px-6 py-4 text-black">
+                                Entrada
+                            </td>
+                            <td class="px-6 py-4 text-black">
+                                Semente de alface
+                            </td>
+                            <td class="px-6 py-4 text-black">
+                                Lorem ipsum
+                            </td>
+                            <td class="px-6 py-4 text-black">
+                                Venda
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>
+
+<script>
+    function goBack() {
+        window.history.back()
+    }
+</script>
+
+<style>
+    .seta {
+        cursor: pointer;
+    }
+</style>
