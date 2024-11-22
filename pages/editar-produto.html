@@ -77,8 +77,8 @@
         <section>
             <div class="px-4 md:pl-[157px] pb-[100px] md:pb-[50px]">
                 <div class="pt-20">
-                    <p class="text-[32px] font-poppins font-semibold leading-tight-20 text-text-green">Editar
-                        usuário</p>
+                    <p class="text-[32px] font-poppins font-semibold leading-tight-20 text-text-green">Manutenção de
+                        produto</p>
                 </div>
             </div>
         </section>
@@ -88,23 +88,14 @@
             <div class="flex flex-col sm:flex-row flex-wrap gap-4">
                 <!-- Primeira Linha -->
                 <div class="flex flex-col sm:flex-row gap-4 w-full">
-                    <div class="w-full sm:w-1/4">
-                        <label for="login" class="font-bold block text-black mb-1">Login</label>
-                        <input type="text" id="login" placeholder="Login" class="border-none px-4 py-2 border rounded-lg w-full">
-                    </div>
-                    <div class="w-full sm:w-1/4">
-                        <label for="nome-usuario" class="font-bold block text-black mb-1">Nome de Usuário</label>
-                        <input type="text" id="nome-usuario" placeholder="Nome de Usuário"
+                    <div class="w-full sm:w-1/2">
+                        <label for="codigo" class="font-bold block text-black mb-1">Código</label>
+                        <input type="text" id="codigo" placeholder="Código"
                             class="border-none px-4 py-2 border rounded-lg w-full">
                     </div>
-                    <div class="w-full sm:w-1/4">
-                        <label for="senha" class="font-bold block text-black mb-1">Senha</label>
-                        <input type="password" id="senha" placeholder="Senha"
-                            class="border-none px-4 py-2 border rounded-lg w-full">
-                    </div>
-                    <div class="w-full sm:w-1/4">
-                        <label for="confirmar-senha" class="font-bold block text-black mb-1">Confirmar Senha</label>
-                        <input type="password" id="confirmar-senha" placeholder="Confirmar Senha"
+                    <div class="w-full sm:w-1/2">
+                        <label for="descricao" class="font-bold block text-black mb-1">Descrição</label>
+                        <input type="text" id="descricao" placeholder="Descrição"
                             class="border-none px-4 py-2 border rounded-lg w-full">
                     </div>
                 </div>
@@ -112,16 +103,14 @@
                 <!-- Segunda Linha -->
                 <div class="flex flex-col sm:flex-row gap-4 w-full">
                     <div class="w-full sm:w-1/2">
-                        <label for="email" class="font-bold block text-black mb-1">E-mail</label>
-                        <input type="email" id="email" placeholder="E-mail" class="border-none px-4 py-2 border rounded-lg w-full">
+                        <label for="tipo-produto" class="font-bold block text-black mb-1">Tipo de Produto</label>
+                        <input type="text" id="tipo-produto" placeholder="Tipo de Produto"
+                            class="border-none px-4 py-2 border rounded-lg w-full">
                     </div>
                     <div class="w-full sm:w-1/2">
-                        <label for="tipo-usuario" class="font-bold block text-black mb-1">Tipo de Usuário</label>
-                        <select id="tipo-usuario" class="border-none px-4 py-2 border rounded-lg w-full">
-                            <option>Tipo de Usuário</option>
-                            <option>Administrador</option>
-                            <option>Usuário Comum</option>
-                        </select>
+                        <label for="unidade-medida" class="font-bold block text-black mb-1">Unidade de Medida</label>
+                        <input type="text" id="unidade-medida" placeholder="Unidade de Medida"
+                            class="border-none px-4 py-2 border rounded-lg w-full">
                     </div>
                 </div>
             </div>
