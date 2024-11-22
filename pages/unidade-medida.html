@@ -64,6 +64,25 @@
     </nav>
 
     <main>
+        <!--PopUp de confirmacao-->
+        <div id="popUpConfirmacao"
+            class="fixed inset-0 bg-custom-green-95 bg-opacity-50 flex flex-col items-center justify-center hidden">
+            <div class="px-10 m-4 md:m-0 bg-custom-green-95 rounded-lg shadow-lg text-center">
+                <div class="mt-10 md:mt-[83px] pb-6 flex justify-center items-center">
+                    <img src="../img/logout_warning.png" class="w-[120px] h-fit" alt="Aviso">
+                </div>
+                <h2 class="text-[24px] font-poppins font-medium text-white font-bold mb-4">Tem certeza?</h2>
+                <p class="text-[24px] font-poppins font-bold text-orange-400">Ao confirmar, as informações alteradas
+                    serão
+                    perdidas!</p>
+                <div class="mb-10 md:mb-[107px] pt-10 flex justify-around mt-4">
+                    <button onclick="confirmarVoltar()"
+                        class="bg-orange-500 text-white py-2 px-10 rounded-lg hover:bg-orange-600 transition duration-200">Confirmar</button>
+                    <button onclick="fecharPopUpConfirmacao()"
+                        class="bg-orange-500 text-white py-2 px-10 rounded-lg hover:bg-orange-600 transition duration-200">Cancelar</button>
+                </div>
+            </div>
+        </div>
         <section>
             <div class="pt-10 pl-6 md:pt-20 md:pl-[77px]">
                 <div>
@@ -205,11 +224,11 @@
 
         <section class="container mx-auto px-4">
             <div class="flex justify-start mt-14 mb-14">
-                <button
+                <button onclick="abrirPopUpConfirmacao()"
                     class="px-6 py-2 drop-shadow-lg bg-green-900 text-white text-lg rounded-lg hover:bg-green-700 transition duration-200">
                     Confirmar
                 </button>
-                <button
+                <button onclick="window.location.href='menu-inicial.html'"
                     class="px-6 py-2 drop-shadow-lg bg-green-900 text-white text-lg rounded-lg hover:bg-green-700 transition duration-200 ml-2">
                     Cancelar
                 </button>
@@ -226,10 +245,34 @@
     function goBack() {
         window.history.back()
     }
+
+    function abrirPopUpConfirmacao() {
+        const popUp = document.getElementById("popUpConfirmacao");
+        if (popUp) {
+            popUp.classList.remove("hidden");
+        }
+    }
+
+
+    function confirmarVoltar() {
+        window.history.back();
+    }
+
+    function fecharPopUpConfirmacao() {
+        // Fecha o pop-up adicionando a classe 'hidden'
+        const popUp = document.getElementById("popUpConfirmacao");
+        if (popUp) {
+            popUp.classList.add("hidden");
+        }
+    }
 </script>
 
 <style>
     .seta {
         cursor: pointer;
+    }
+
+    #popUpConfirmacao {
+        z-index: 1000;
     }
 </style>
