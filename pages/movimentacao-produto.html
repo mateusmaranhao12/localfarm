@@ -193,34 +193,36 @@
 
         <!--Numeracao de paginas-->
         <section class="container mx-auto px-4 sm:px-32 py-4">
-            <div class="flex justify-between items-center">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
                 <!-- Paginação -->
-                <div class="flex gap-2">
-                    <button class="px-4 py-2 bg-white text-gray-700 rounded-lg"><i
-                            class="fa-solid fa-arrow-left"></i></button>
+                <div class="flex flex-wrap justify-center gap-2">
+                    <button class="px-4 py-2 bg-white text-gray-700 rounded-lg">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
                     <button class="px-4 py-2 bg-green-900 text-white rounded-lg">1</button>
                     <button class="px-4 py-2 bg-white text-gray-700 rounded-lg">2</button>
                     <button class="px-4 py-2 bg-white text-gray-700 rounded-lg">3</button>
                     <button class="px-4 py-2 bg-white text-gray-700 rounded-lg">4</button>
                     <button class="px-4 py-2 bg-white text-gray-700 rounded-lg">5</button>
-                    <button class="px-4 py-2 bg-white text-gray-700 rounded-lg"><i
-                            class="fa-solid fa-arrow-right"></i></button>
+                    <button class="px-4 py-2 bg-white text-gray-700 rounded-lg">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
                 </div>
 
                 <!-- Select e input -->
-                <div class="flex items-center gap-4">
-                    <select class="px-2 py-1 border rounded-lg">
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
+                    <select class="px-2 py-1 border rounded-lg w-full sm:w-auto">
                         <option>8 / page</option>
                         <option>10 / page</option>
                         <option>20 / page</option>
                     </select>
-                    <span class="text-sm text-gray-700">Go to</span>
-                    <input type="number" class="px-2 py-1 border rounded-lg w-16" placeholder="1">
+                    <div class="flex justify-center items-center gap-2 w-full sm:w-auto">
+                        <span class="text-sm text-gray-700">Go to</span>
+                        <input type="number" class="px-2 py-1 border rounded-lg w-full sm:w-16" placeholder="1">
+                    </div>
                 </div>
             </div>
         </section>
-
-
     </main>
 </body>
 

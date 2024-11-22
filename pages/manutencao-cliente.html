@@ -77,12 +77,24 @@
         <section>
             <div class="px-4 md:pl-[157px] pb-[100px] md:pb-[50px]">
                 <div class="pt-20">
-                    <p class="text-[32px] font-poppins font-semibold leading-tight-20 text-text-green">Cliente /
+                    <p class="text-[32px] font-poppins font-semibold leading-tight-20 text-text-green">Manutenção
+                        Cliente /
                         Fornecedor</p>
-                    <button onclick="window.location.href='manutencao-cliente.html'"
-                        class="mt-6 px-6 py-2 drop-shadow-lg bg-green-900 text-white text-lg rounded-lg hover:bg-green-700 transition duration-200 ml-2">
-                        Manutenção
-                    </button>
+                    <!-- Botões com layout de grid -->
+                    <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
+                        <button
+                            class="w-40 py-4 bg-text-green text-white text-lg font-medium rounded-lg shadow-md hover:bg-green-700 transition-all">
+                            Adicionar
+                        </button>
+                        <button
+                            class="w-40 py-4 bg-text-green text-white text-lg font-medium rounded-lg shadow-md hover:bg-green-700 transition-all">
+                            Editar
+                        </button>
+                        <button
+                            class="w-40 py-4 bg-text-green text-white text-lg font-medium rounded-lg shadow-md hover:bg-green-700 transition-all">
+                            Desabilitar
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>

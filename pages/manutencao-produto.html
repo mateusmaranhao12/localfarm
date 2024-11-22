@@ -77,12 +77,23 @@
         <section>
             <div class="px-4 md:pl-[157px] pb-[100px] md:pb-[50px]">
                 <div class="pt-20">
-                    <p class="text-[32px] font-poppins font-semibold leading-tight-20 text-text-green">Cliente /
-                        Fornecedor</p>
-                    <button onclick="window.location.href='manutencao-cliente.html'"
-                        class="mt-6 px-6 py-2 drop-shadow-lg bg-green-900 text-white text-lg rounded-lg hover:bg-green-700 transition duration-200 ml-2">
-                        Manutenção
-                    </button>
+                    <p class="text-[32px] font-poppins font-semibold leading-tight-20 text-text-green">Manutenção de
+                        Produto</p>
+                    <!-- Botões com layout de grid -->
+                    <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
+                        <button
+                            class="w-40 py-4 bg-text-green text-white text-lg font-medium rounded-lg shadow-md hover:bg-green-700 transition-all">
+                            Adicionar
+                        </button>
+                        <button
+                            class="w-40 py-4 bg-text-green text-white text-lg font-medium rounded-lg shadow-md hover:bg-green-700 transition-all">
+                            Editar
+                        </button>
+                        <button
+                            class="w-40 py-4 bg-text-green text-white text-lg font-medium rounded-lg shadow-md hover:bg-green-700 transition-all">
+                            Desabilitar
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -97,57 +108,33 @@
                                 COD
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Nome
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                CPF/CNPJ
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Tipo
+                                Descrição
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="bg-orange-50 border-b border-white">
                             <th scope="row" class="px-6 py-4 font-medium text-black whitespace-nowrap">
-                                01
+                                PRD01
                             </th>
                             <td class="px-6 py-4 text-black">
-                                Fernanda
-                            </td>
-                            <td class="px-6 py-4 text-black">
-                                00.000.000/0001-00
-                            </td>
-                            <td class="px-6 py-4 text-black">
-                                Cliente
+                                Alface
                             </td>
                         </tr>
                         <tr class="bg-orange-50 border-b border-white">
                             <th scope="row" class="px-6 py-4 font-medium text-black whitespace-nowrap">
-                                02
+                                PRD02
                             </th>
                             <td class="px-6 py-4 text-black">
-                                Rodolfo
-                            </td>
-                            <td class="px-6 py-4 text-black">
-                                00.000.000/0001-00
-                            </td>
-                            <td class="px-6 py-4 text-black">
-                                Cliente
+                                Salsinha
                             </td>
                         </tr>
                         <tr class="bg-orange-50 border-b border-white">
                             <th scope="row" class="px-6 py-4 font-medium text-black whitespace-nowrap">
-                                03
+                                PRD03
                             </th>
                             <td class="px-6 py-4 text-black">
-                                Marcos
-                            </td>
-                            <td class="px-6 py-4 text-black">
-                                00.000.000/0001-00
-                            </td>
-                            <td class="px-6 py-4 text-black">
-                                Fornecedor
+                                Cebolinha
                             </td>
                         </tr>
                     </tbody>
@@ -187,7 +174,6 @@
                 </div>
             </div>
         </section>
-
         <section class="container mx-auto px-4">
             <div class="flex justify-start mt-14 mb-14">
                 <button
