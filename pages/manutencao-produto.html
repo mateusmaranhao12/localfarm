@@ -64,6 +64,24 @@
     </nav>
 
     <main>
+        <!-- Pop-up de confirmação -->
+        <div id="desabilitarProduto"
+            class="fixed inset-0 bg-custom-green-95 bg-opacity-50 flex flex-col items-center justify-center hidden">
+            <div class="px-10 m-4 md:m-0 bg-custom-green-95 rounded-lg shadow-lg text-center">
+                <div class="mt-10 md:mt-[83px] pb-6 flex justify-center items-center">
+                    <img src="../img/logout_warning.png" class="w-[120px] h-fit" alt="Logout Aviso">
+                </div>
+                <h2 class="text-xl font-poppins font-medium text-custom-brown mb-4">Tem certeza?</h2>
+                <p class="text-[24px] font-poppins font-bold text-custom-orange">Ao confirmar a opção
+                    selecionada será desabilitada!</p>
+                <div class="mb-10 md:mb-[107px] pt-10 flex justify-around mt-4">
+                    <button onclick="confirmdesabilitarProduto()"
+                        class="bg-red-500 text-white py-2 px-10 rounded-lg hover:bg-red-600 transition duration-200">Confirmar</button>
+                    <button onclick="closedesabilitarProduto()"
+                        class="bg-gray-300 text-black py-2 px-10 rounded-lg hover:bg-gray-400 transition duration-200">Cancelar</button>
+                </div>
+            </div>
+        </div>
         <section>
             <div class="pt-10 pl-6 md:pt-20 md:pl-[77px]">
                 <div>
@@ -89,7 +107,7 @@
                             class="w-40 py-4 bg-text-green text-white text-lg font-medium rounded-lg shadow-md hover:bg-green-700 transition-all">
                             Editar
                         </button>
-                        <button
+                        <button onclick="showdesabilitarProduto()"
                             class="w-40 py-4 bg-text-green text-white text-lg font-medium rounded-lg shadow-md hover:bg-green-700 transition-all">
                             Desabilitar
                         </button>
@@ -185,10 +203,35 @@
     function goBack() {
         window.history.back()
     }
+
+    // Exibe o pop-up de confirmação
+    function showdesabilitarProduto() {
+        const popup = document.getElementById("desabilitarProduto");
+        if (popup) {
+            popup.classList.remove("hidden");
+        }
+    }
+
+    // Fecha o pop-up de confirmação
+    function closedesabilitarProduto() {
+        const popup = document.getElementById("desabilitarProduto");
+        if (popup) {
+            popup.classList.add("hidden");
+        }
+    }
+
+    // Ação de confirmação
+    function confirmdesabilitarProduto() {
+        closedesabilitarProduto();
+    }
 </script>
 
 <style>
     .seta {
         cursor: pointer;
+    }
+
+    #desabilitarProduto {
+        z-index: 1000;
     }
 </style>
