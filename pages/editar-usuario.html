@@ -83,6 +83,43 @@
             </div>
         </section>
 
+        <div id="popUpCamposPreenchidos"
+            class="fixed inset-0 bg-custom-green-95 bg-opacity-50 flex flex-col items-center justify-center hidden">
+            <div class="px-10 m-4 md:m-0 bg-custom-green-95 rounded-lg shadow-lg text-center">
+                <div class="mt-10 md:mt-[83px] pb-6 flex justify-center items-center">
+                    <img src="../img/logout_warning.png" class="w-[120px] h-fit" alt="Aviso">
+                </div>
+                <h2 class="text-[24px] font-poppins font-medium text-white font-bold mb-4">Tem certeza?</h2>
+                <p class="text-[24px] font-poppins font-bold text-orange-400">
+                    Ao confirmar, as informações alteradas serão perdidas!
+                </p>
+                <div class="mb-10 md:mb-[107px] pt-10 flex justify-around mt-4">
+                    <button onclick="confirmarSaida()"
+                        class="bg-orange-500 text-white py-2 px-10 rounded-lg hover:bg-orange-600 transition duration-200">Confirmar</button>
+                    <button onclick="fecharPopUpCamposPreenchidos()"
+                        class="bg-orange-500 text-white py-2 px-10 rounded-lg hover:bg-orange-600 transition duration-200">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!--PopUp de sucesso-->
+        <div id="popUpSucesso"
+            class="fixed inset-0 bg-custom-green-95 bg-opacity-50 flex flex-col items-center justify-center hidden">
+            <div class="px-10 m-4 md:m-0 bg-custom-green-95 rounded-lg shadow-lg text-center">
+                <div class="mt-10 md:mt-[83px] pb-6 flex justify-center items-center">
+                    <img src="../img/icon-check.png" class="w-[120px] h-fit" alt="Logout Aviso">
+                </div>
+                <h2 class="text-[24px] font-poppins font-medium text-white font-bold mb-4">Tudo certo!</h2>
+                <p class="text-[24px] font-poppins font-bold text-orange-200">As informações foram salvas com
+                    sucesso!</p>
+                <div class="mb-10 md:mb-[107px] pt-10 flex justify-around mt-4">
+                    <button onclick="fecharPopUp()"
+                        class="bg-orange-400 text-white py-2 px-10 rounded-lg hover:bg-orange-600 transition duration-200">Ok</button>
+                </div>
+            </div>
+        </div>
+
         <section class="container mx-auto px-4 py-6">
             <!-- Linha de Inputs -->
             <div class="flex flex-col sm:flex-row flex-wrap gap-4">
@@ -90,7 +127,8 @@
                 <div class="flex flex-col sm:flex-row gap-4 w-full">
                     <div class="w-full sm:w-1/4">
                         <label for="login" class="font-bold block text-black mb-1">Login</label>
-                        <input type="text" id="login" placeholder="Login" class="border-none px-4 py-2 border rounded-lg w-full">
+                        <input type="text" id="login" placeholder="Login"
+                            class="border-none px-4 py-2 border rounded-lg w-full">
                     </div>
                     <div class="w-full sm:w-1/4">
                         <label for="nome-usuario" class="font-bold block text-black mb-1">Nome de Usuário</label>
@@ -113,7 +151,8 @@
                 <div class="flex flex-col sm:flex-row gap-4 w-full">
                     <div class="w-full sm:w-1/2">
                         <label for="email" class="font-bold block text-black mb-1">E-mail</label>
-                        <input type="email" id="email" placeholder="E-mail" class="border-none px-4 py-2 border rounded-lg w-full">
+                        <input type="email" id="email" placeholder="E-mail"
+                            class="border-none px-4 py-2 border rounded-lg w-full">
                     </div>
                     <div class="w-full sm:w-1/2">
                         <label for="tipo-usuario" class="font-bold block text-black mb-1">Tipo de Usuário</label>
@@ -129,11 +168,11 @@
 
         <section class="container mx-auto px-4">
             <div class="flex justify-start mt-14 mb-14">
-                <button
+                <button onclick="mostrarPopUpSucesso()"
                     class="px-6 py-2 drop-shadow-lg bg-green-900 text-white text-lg rounded-lg hover:bg-green-700 transition duration-200">
                     Salvar
                 </button>
-                <button
+                <button onclick="goBack()"
                     class="px-6 py-2 drop-shadow-lg bg-green-900 text-white text-lg rounded-lg hover:bg-green-700 transition duration-200 ml-2">
                     Cancelar
                 </button>
@@ -145,14 +184,15 @@
 
 </html>
 
-<script>
-    function goBack() {
-        window.history.back()
-    }
+<script src="../assets/js/popups-editar-usuario.js">
 </script>
 
 <style>
     .seta {
         cursor: pointer;
+    }
+
+    #popUpCamposPreenchidos, #popUpSucesso {
+        z-index: 1000;
     }
 </style>

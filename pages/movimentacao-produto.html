@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="px-6 flex flex-col justify-center items-center gap-y-2 cursor-pointer"
-                    onclick="showLogoutPopup()">
+                    onclick="showdesabilitarMovimentacao()">
                     <img src="../img/logout_icon.svg" class="w-[38px] h-[38px]" alt="Icone Logout">
                     <div class="hidden md:block">
                         <p class="text-base font-poppins font-bold leading-tight-20 text-white">LOGOUT</p>
@@ -44,19 +44,20 @@
         </div>
 
         <!-- Pop-up de confirmação -->
-        <div id="logoutPopup"
+        <div id="desabilitarMovimentacao"
             class="fixed inset-0 bg-custom-green-95 bg-opacity-50 flex flex-col items-center justify-center hidden">
             <div class="px-10 m-4 md:m-0 bg-custom-green-95 rounded-lg shadow-lg text-center">
                 <div class="mt-10 md:mt-[83px] pb-6 flex justify-center items-center">
                     <img src="../img/logout_warning.png" class="w-[120px] h-fit" alt="Logout Aviso">
                 </div>
                 <h2 class="text-xl font-poppins font-medium text-custom-brown mb-4">Tem certeza?</h2>
-                <p class="text-[24px] font-poppins font-bold text-custom-orange">Deseja mesmo sair do sistema?</p>
+                <p class="text-[24px] font-poppins font-bold text-custom-orange">Ao confirmar a opção
+                    selecionada será desabilitada!</p>
                 <div class="mb-10 md:mb-[107px] pt-10 flex justify-around mt-4">
-                    <button onclick="confirmLogout()"
-                        class="bg-red-500 text-white py-2 px-10 rounded-lg hover:bg-red-600 transition duration-200">Sim</button>
-                    <button onclick="closeLogoutPopup()"
-                        class="bg-gray-300 text-black py-2 px-10 rounded-lg hover:bg-gray-400 transition duration-200">Não</button>
+                    <button onclick="confirmDesabilitarMovimentacao()"
+                        class="bg-red-500 text-white py-2 px-10 rounded-lg hover:bg-red-600 transition duration-200">Confirmar</button>
+                    <button onclick="closedesabilitarMovimentacao()"
+                        class="bg-gray-300 text-black py-2 px-10 rounded-lg hover:bg-gray-400 transition duration-200">Cancelar</button>
                 </div>
             </div>
         </div>
@@ -91,7 +92,7 @@
                         class="w-40 py-4 bg-text-green text-white text-lg font-medium rounded-lg shadow-md hover:bg-green-700 transition-all">
                         Editar
                     </button>
-                    <button
+                    <button onclick="showdesabilitarMovimentacao()"
                         class="w-40 py-4 bg-text-green text-white text-lg font-medium rounded-lg shadow-md hover:bg-green-700 transition-all">
                         Desabilitar
                     </button>
@@ -232,10 +233,36 @@
     function goBack() {
         window.history.back()
     }
+
+    // Exibe o pop-up de confirmação
+    function showdesabilitarMovimentacao() {
+        const popup = document.getElementById("desabilitarMovimentacao");
+        if (popup) {
+            popup.classList.remove("hidden");
+        }
+    }
+
+    // Fecha o pop-up de confirmação
+    function closedesabilitarMovimentacao() {
+        const popup = document.getElementById("desabilitarMovimentacao");
+        if (popup) {
+            popup.classList.add("hidden");
+        }
+    }
+
+    // Ação de confirmação
+    function confirmDesabilitarMovimentacao() {
+        closedesabilitarMovimentacao();
+    }
+
 </script>
 
 <style>
     .seta {
         cursor: pointer;
+    }
+
+    #desabilitarMovimentacao {
+        z-index: 1000;
     }
 </style>

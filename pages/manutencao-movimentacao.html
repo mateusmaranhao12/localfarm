@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="px-6 flex flex-col justify-center items-center gap-y-2 cursor-pointer"
-                    onclick="showLogoutPopup()">
+                    onclick="showpopUpSucesso()">
                     <img src="../img/logout_icon.svg" class="w-[38px] h-[38px]" alt="Icone Logout">
                     <div class="hidden md:block">
                         <p class="text-base font-poppins font-bold leading-tight-20 text-white">LOGOUT</p>
@@ -43,27 +43,47 @@
             </div>
         </div>
 
-        <!-- Pop-up de confirmação -->
-        <div id="logoutPopup"
+    </nav>
+
+    <main>
+        <!--PopUp de sucesso-->
+        <div id="popUpSucesso"
             class="fixed inset-0 bg-custom-green-95 bg-opacity-50 flex flex-col items-center justify-center hidden">
             <div class="px-10 m-4 md:m-0 bg-custom-green-95 rounded-lg shadow-lg text-center">
                 <div class="mt-10 md:mt-[83px] pb-6 flex justify-center items-center">
-                    <img src="../img/logout_warning.png" class="w-[120px] h-fit" alt="Logout Aviso">
+                    <img src="../img/icon-check.png" class="w-[120px] h-fit" alt="Logout Aviso">
                 </div>
-                <h2 class="text-xl font-poppins font-medium text-custom-brown mb-4">Tem certeza?</h2>
-                <p class="text-[24px] font-poppins font-bold text-custom-orange">Deseja mesmo sair do sistema?</p>
+                <h2 class="text-[24px] font-poppins font-medium text-white font-bold mb-4">Tudo certo!</h2>
+                <p class="text-[24px] font-poppins font-bold text-orange-200">As informações foram salvas com
+                    sucesso!</p>
                 <div class="mb-10 md:mb-[107px] pt-10 flex justify-around mt-4">
-                    <button onclick="confirmLogout()"
-                        class="bg-red-500 text-white py-2 px-10 rounded-lg hover:bg-red-600 transition duration-200">Sim</button>
-                    <button onclick="closeLogoutPopup()"
-                        class="bg-gray-300 text-black py-2 px-10 rounded-lg hover:bg-gray-400 transition duration-200">Não</button>
+                    <button onclick="fecharPopUp()"
+                        class="bg-orange-400 text-white py-2 px-10 rounded-lg hover:bg-orange-600 transition duration-200">Ok</button>
                 </div>
             </div>
         </div>
 
-    </nav>
+        <!--PopUp de cancelar-->
+        <div id="popUpConfirmacao"
+            class="fixed inset-0 bg-custom-green-95 bg-opacity-50 flex flex-col items-center justify-center hidden">
+            <div class="px-10 m-4 md:m-0 bg-custom-green-95 rounded-lg shadow-lg text-center">
+                <div class="mt-10 md:mt-[83px] pb-6 flex justify-center items-center">
+                    <img src="../img/logout_warning.png" class="w-[120px] h-fit" alt="Aviso">
+                </div>
+                <h2 class="text-[24px] font-poppins font-medium text-white font-bold mb-4">Tem certeza?</h2>
+                <p class="text-[24px] font-poppins font-bold text-orange-400">Ao confirmar, as informações alteradas
+                    serão
+                    perdidas!</p>
+                <div class="mb-10 md:mb-[107px] pt-10 flex justify-around mt-4">
+                    <button onclick="confirmarVoltar()"
+                        class="bg-orange-500 text-white py-2 px-10 rounded-lg hover:bg-orange-600 transition duration-200">Confirmar</button>
+                    <button onclick="fecharPopUpConfirmacao()"
+                        class="bg-orange-500 text-white py-2 px-10 rounded-lg hover:bg-orange-600 transition duration-200">Cancelar</button>
+                </div>
+            </div>
+        </div>
 
-    <main>
+
         <section>
             <div class="pt-10 pl-6 md:pt-20 md:pl-[77px]">
                 <div>
@@ -162,11 +182,11 @@
 
         <section class="container mx-auto px-4">
             <div class="flex justify-start mt-14 mb-14">
-                <button
+                <button onclick="mostrarPopUpSucesso()"
                     class="px-6 py-2 drop-shadow-lg bg-green-900 text-white text-lg rounded-lg hover:bg-green-700 transition duration-200">
                     Salvar
                 </button>
-                <button
+                <button onclick="goBack()"
                     class="px-6 py-2 drop-shadow-lg bg-green-900 text-white text-lg rounded-lg hover:bg-green-700 transition duration-200 ml-2">
                     Cancelar
                 </button>
@@ -178,14 +198,15 @@
 
 </html>
 
-<script>
-    function goBack() {
-        window.history.back()
-    }
+<script src="../assets/js/popups-manutencao-produto.js">
 </script>
 
 <style>
     .seta {
         cursor: pointer;
+    }
+
+    #popUpSucesso {
+        z-index: 1000;
     }
 </style>
